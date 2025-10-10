@@ -1,0 +1,123 @@
+
+/* GigSync Static Site Styles */
+:root{
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --ink: #0f172a;
+  --muted: #475569;
+  --line: #e2e8f0;
+  --brand: #14b8a6; /* teal-500 */
+  --brand-2: #06b6d4; /* cyan-500-ish */
+  --radius: 18px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji','Segoe UI Emoji';
+  color: var(--ink);
+  background: linear-gradient(to bottom, #d1fae5 0%, var(--bg) 30%, #f8fafc 100%);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+header.site-header{
+  position: sticky; top:0; z-index:50;
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,.75);
+  border-bottom:1px solid var(--line);
+}
+.navbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 0;
+}
+.brand{
+  display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);
+  font-weight:800; letter-spacing:-0.02em; font-size:20px;
+}
+.brand .logo{
+  display:grid;place-items:center;
+  width:36px;height:36px;border-radius:12px;
+  background: var(--brand); color:#fff;
+  box-shadow: 0 6px 14px rgba(20,184,166,.35);
+  transform: rotate(0deg);
+  transition: transform .2s ease;
+}
+.brand:hover .logo{transform: rotate(6deg)}
+
+.nav{
+  display:flex;gap:8px;flex-wrap:wrap;
+}
+.nav a{
+  text-decoration:none; font-weight:600; font-size:14px;
+  color:#0f172a;padding:8px 12px;border-radius:10px;
+}
+.nav a.active, .nav a:hover{ background:#f1f5f9; }
+main{padding:48px 0}
+footer{
+  border-top:1px solid var(--line);
+  background:rgba(255,255,255,.7);
+}
+.footer-inner{
+  display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  padding:18px 0;color:#475569;font-size:14px;
+}
+/* Sections */
+.hero{
+  display:grid;grid-template-columns:1fr;gap:32px;align-items:center;
+}
+@media (min-width: 992px){
+  .hero{grid-template-columns: 1.1fr .9fr}
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#f1f5f9;color:#475569;padding:6px 10px;border-radius:999px;font-size:12px
+}
+h1{font-size: clamp(32px, 5vw, 48px); line-height:1.15; margin: 10px 0 0}
+.lead{font-size: 18px;color:var(--muted);max-width:60ch;margin-top:12px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  padding:10px 14px;border-radius:14px;font-weight:700;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+}
+.btn.primary{background: var(--brand); color:#fff}
+.btn.secondary{background:#f1f5f9;color:#0f172a}
+.list{margin:16px 0 0;padding:0;list-style:none;color:#0f172a}
+.list li{display:flex;gap:10px;margin:8px 0}
+.check{color:var(--brand);font-weight:900}
+
+.card{
+  position:relative;background:var(--panel);border:1px solid var(--line);
+  padding:18px;border-radius:24px;box-shadow: 0 8px 20px rgba(15,23,42,.06);
+}
+.highlight{position:absolute;inset:-12px;background:rgba(45,212,191,.18);border-radius:28px;filter: blur(22px);z-index:-1}
+
+.features{margin-top:48px;display:grid;gap:18px}
+@media (min-width: 768px){
+  .features{grid-template-columns: repeat(2, 1fr)}
+}
+@media (min-width: 1100px){
+  .features{grid-template-columns: repeat(3, 1fr)}
+}
+.feature{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 6px 14px rgba(15,23,42,.04)}
+.feature h3{margin:0 0 6px;font-size:16px}
+.feature p{margin:0;color:#475569;font-size:14px}
+
+.cta{
+  margin-top:48px;border-radius:26px;color:#fff;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+  padding:26px;box-shadow:0 20px 40px rgba(14,165,233,.25)
+}
+.cta h3{margin:0 0 8px}
+.cta p{margin:0 0 12px;color: rgba(255,255,255,.9)}
+
+.prose{max-width:none}
+.prose h1, .prose h2, .prose h3{line-height:1.2}
+.prose h1{font-size:34px;margin-top:0}
+.prose h2{font-size:22px;margin-top:28px}
+.prose h3{font-size:18px;margin-top:18px}
+.prose p, .prose li{color:#334155}
+.code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#f1f5f9; padding:2px 6px; border-radius:8px}
+.header-gap{height:0.1px}
+/* Utility */
+.hidden{display:none}

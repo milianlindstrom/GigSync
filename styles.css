@@ -139,5 +139,13 @@ h1{font-size: clamp(32px, 5vw, 48px); line-height:1.15; margin: 10px 0 0}
 .brand:hover .logo img {
   transform: rotate(6deg);
 }
+
+.brand .logo img {
+  height: 36px;    /* already set */
+  width: auto;
+  display: block;
+  border-radius: 12px;   /* <- rounds the corners */
+}
+
 /* Utility */
 .hidden{display:none}

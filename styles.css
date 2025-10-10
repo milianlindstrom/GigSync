@@ -119,5 +119,25 @@ h1{font-size: clamp(32px, 5vw, 48px); line-height:1.15; margin: 10px 0 0}
 .prose p, .prose li{color:#334155}
 .code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#f1f5f9; padding:2px 6px; border-radius:8px}
 .header-gap{height:0.1px}
+/* Logo overrides */
+.brand .logo {
+  background: none;   /* remove teal background box */
+  box-shadow: none;
+  width: auto;
+  height: auto;
+  padding: 0;
+}
+
+.brand .logo img {
+  height: 40px;       /* adjust size if needed */
+  width: auto;
+  display: block;
+  transform: rotate(0deg);
+  transition: transform .2s ease;
+}
+
+.brand:hover .logo img {
+  transform: rotate(6deg);
+}
 /* Utility */
 .hidden{display:none}
